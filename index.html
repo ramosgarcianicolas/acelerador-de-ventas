@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acelerador de Ventas — Calificación inteligente de leads vía WhatsApp</title>
+  <meta name="description" content="Calificación automática de leads vía WhatsApp con inteligencia artificial. Diseñado para agencias automotrices." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #FFFFFF;
+      --text: #1A1A2E;
+      --headline: #0D1B4B;
+      --secondary: #6B7280;
+      --divider: #E5E7EB;
+      --cta: #0D1B4B;
+      --max-width: 780px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrapper {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 0;
+    }
+
+    #hero .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .wordmark {
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--headline);
+    }
+
+    .hero-rule {
+      width: 48px;
+      height: 1px;
+      background: var(--headline);
+      border: none;
+    }
+
+    .hero-tagline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 400;
+      color: var(--headline);
+      line-height: 1.25;
+      max-width: 620px;
+    }
+
+    .hero-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--secondary);
+      max-width: 480px;
+      line-height: 1.75;
+    }
+
+    .btn-cta {
+      display: inline-block;
+      background: var(--cta);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 14px 40px;
+      border: none;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+
+    .btn-cta:hover {
+      background: #1a2f6b;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 20px;
+    }
+
+    .section-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 400;
+      color: var(--headline);
+      line-height: 1.3;
+      margin-bottom: 24px;
+    }
+
+    .section-body {
+      font-size: 15px;
+      color: var(--secondary);
+      max-width: 640px;
+      line-height: 1.8;
+    }
+
+    hr.section-divider {
+      border: none;
+      border-top: 1px solid var(--divider);
+      margin: 0;
+    }
+
+    /* ── QUÉ ES ── */
+    #que-es {
+      border-top: 1px solid var(--divider);
+    }
+
+    /* ── VENTAJAS ── */
+    #ventajas {
+      border-top: 1px solid var(--divider);
+    }
+
+    .ventajas-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px 40px;
+      margin-top: 48px;
+    }
+
+    .ventaja-card {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .ventaja-icon {
+      width: 32px;
+      height: 32px;
+      color: var(--headline);
+    }
+
+    .ventaja-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--headline);
+    }
+
+    .ventaja-desc {
+      font-size: 14px;
+      color: var(--secondary);
+      line-height: 1.75;
+    }
+
+    /* ── CÓMO FUNCIONA ── */
+    #como-funciona {
+      border-top: 1px solid var(--divider);
+    }
+
+    .steps-list {
+      margin-top: 48px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 24px;
+      padding: 32px 0;
+    }
+
+    .step + .step {
+      border-top: 1px solid var(--divider);
+    }
+
+    .step-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 400;
+      color: var(--headline);
+      line-height: 1;
+      padding-top: 4px;
+    }
+
+    .step-content {}
+
+    .step-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--headline);
+      margin-bottom: 8px;
+    }
+
+    .step-desc {
+      font-size: 14px;
+      color: var(--secondary);
+      line-height: 1.75;
+    }
+
+    /* ── PARA QUIÉN ── */
+    #para-quien {
+      border-top: 1px solid var(--divider);
+    }
+
+    .para-quien-list {
+      list-style: none;
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .para-quien-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    .para-quien-list li::before {
+      content: "—";
+      color: var(--headline);
+      font-family: 'Playfair Display', serif;
+      flex-shrink: 0;
+    }
+
+    /* ── CONTACTO ── */
+    #contacto {
+      border-top: 1px solid var(--divider);
+      text-align: center;
+    }
+
+    .contacto-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--headline);
+      margin-bottom: 28px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contacto-sub {
+      font-size: 14px;
+      color: var(--secondary);
+      margin-bottom: 20px;
+    }
+
+    .contacto-email {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--headline);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .contacto-email:hover {
+      border-bottom-color: var(--headline);
+    }
+
+    /* ── PRIVACY ── */
+    #privacidad {
+      border-top: 1px solid var(--divider);
+      padding: 56px 0;
+    }
+
+    .privacy-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 20px;
+    }
+
+    .privacy-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .privacy-list li {
+      font-size: 13px;
+      color: var(--secondary);
+      line-height: 1.65;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .privacy-list li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: var(--secondary);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--divider);
+      padding: 28px 0;
+      text-align: center;
+    }
+
+    .footer-text {
+      font-size: 12px;
+      color: var(--secondary);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      section {
+        padding: 48px 0;
+      }
+
+      #hero {
+        padding: 64px 0;
+        min-height: 100svh;
+      }
+
+      .ventajas-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .step {
+        grid-template-columns: 48px 1fr;
+        gap: 16px;
+      }
+
+      .step-number {
+        font-size: 2.2rem;
+      }
+
+      #privacidad {
+        padding: 40px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ HERO ══ -->
+  <section id="hero">
+    <div class="wrapper">
+      <p class="wordmark">Acelerador de Ventas</p>
+      <hr class="hero-rule" />
+      <h1 class="hero-tagline">Calificación inteligente de leads vía WhatsApp</h1>
+      <p class="hero-sub">Automatiza el primer contacto con tus prospectos. Clasifica, califica y prioriza oportunidades de venta antes de que lleguen a tu asesor.</p>
+      <a href="#que-es" class="btn-cta">Conoce más</a>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- ══ QUÉ ES ══ -->
+  <section id="que-es">
+    <div class="wrapper">
+      <p class="section-label">El producto</p>
+      <h2 class="section-headline">¿Qué es Acelerador de Ventas?</h2>
+      <p class="section-body">Acelerador de Ventas es una plataforma de inteligencia artificial que se integra directamente a WhatsApp Business de tu agencia automotriz. Responde de forma inmediata a cada prospecto, recaba la información clave —modelo de interés, plazo de compra, tipo de financiamiento— y entrega al asesor un lead calificado, listo para cerrar.</p>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- ══ VENTAJAS ══ -->
+  <section id="ventajas">
+    <div class="wrapper">
+      <p class="section-label">Por qué funciona</p>
+      <h2 class="section-headline">Ventajas clave</h2>
+      <div class="ventajas-grid">
+
+        <div class="ventaja-card">
+          <svg class="ventaja-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="16" cy="16" r="13"/>
+            <polyline points="16 8 16 16 21 19"/>
+          </svg>
+          <p class="ventaja-title">Respuesta en segundos</p>
+          <p class="ventaja-desc">El sistema atiende a cada prospecto al instante, las 24 horas del día, sin importar el volumen de mensajes entrantes.</p>
+        </div>
+
+        <div class="ventaja-card">
+          <svg class="ventaja-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 4 C9 4 4 9 4 16 C4 19 5.5 21.5 7.5 23.5 L6 28 L11 26.5 C12.5 27.3 14.2 27.8 16 27.8 C23 27.8 28 22.8 28 16 C28 9 23 4 16 4Z"/>
+            <path d="M11 15 Q13 12 16 14 Q19 16 21 13"/>
+            <circle cx="12" cy="17" r="1" fill="currentColor"/>
+            <circle cx="16" cy="18.5" r="1" fill="currentColor"/>
+            <circle cx="20" cy="17" r="1" fill="currentColor"/>
+          </svg>
+          <p class="ventaja-title">IA conversacional</p>
+          <p class="ventaja-desc">Conversaciones naturales en español que recaban intención de compra, rango de presupuesto y modelo preferido sin cuestionarios rígidos.</p>
+        </div>
+
+        <div class="ventaja-card">
+          <svg class="ventaja-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="6" width="22" height="4" rx="0"/>
+            <rect x="5" y="14" width="22" height="4" rx="0"/>
+            <rect x="5" y="22" width="13" height="4" rx="0"/>
+          </svg>
+          <p class="ventaja-title">Leads organizados</p>
+          <p class="ventaja-desc">Cada conversación se convierte en un registro estructurado. Tu equipo recibe solo prospectos con intención real de compra.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- ══ CÓMO FUNCIONA ══ -->
+  <section id="como-funciona">
+    <div class="wrapper">
+      <p class="section-label">El proceso</p>
+      <h2 class="section-headline">Cómo funciona</h2>
+      <div class="steps-list">
+
+        <div class="step">
+          <span class="step-number">01</span>
+          <div class="step-content">
+            <p class="step-title">El prospecto escribe por WhatsApp</p>
+            <p class="step-desc">El cliente contacta a tu agencia a través de tu número de WhatsApp Business habitual. No necesita descargar nada ni registrarse.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <span class="step-number">02</span>
+          <div class="step-content">
+            <p class="step-title">La IA inicia la calificación</p>
+            <p class="step-desc">Acelerador de Ventas responde de inmediato con una conversación natural. Identifica modelo de interés, plazo estimado de compra y si el prospecto requiere financiamiento.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <span class="step-number">03</span>
+          <div class="step-content">
+            <p class="step-title">El lead queda calificado y registrado</p>
+            <p class="step-desc">Al concluir la conversación, el sistema genera un resumen estructurado con los datos clave del prospecto, listo para el CRM o para tu equipo de ventas.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <span class="step-number">04</span>
+          <div class="step-content">
+            <p class="step-title">Tu asesor cierra la venta</p>
+            <p class="step-desc">El asesor recibe un prospecto informado y con intención real. Dedica su tiempo a lo que importa: construir la relación y cerrar el negocio.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- ══ PARA QUIÉN ES ══ -->
+  <section id="para-quien">
+    <div class="wrapper">
+      <p class="section-label">A quién va dirigido</p>
+      <h2 class="section-headline">Para quién es</h2>
+      <ul class="para-quien-list">
+        <li>Agencias automotrices que reciben leads digitales y quieren mejorar la tasa de conversión sin aumentar la plantilla de asesores.</li>
+        <li>Gerentes de ventas que necesitan visibilidad sobre la calidad de los prospectos antes de asignarlos a su equipo.</li>
+        <li>Grupos automotrices con múltiples puntos de venta que buscan estandarizar el primer contacto y reducir tiempos de respuesta.</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- ══ CONTACTO ══ -->
+  <section id="contacto">
+    <div class="wrapper">
+      <p class="contacto-headline">"¿Listo para calificar mejor a tus prospectos?"</p>
+      <p class="contacto-sub">Escríbenos y te mostramos cómo funciona en tu agencia.</p>
+      <a href="mailto:nramos@bmw-santafe.com.mx" class="contacto-email">nramos@bmw-santafe.com.mx</a>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- ══ POLÍTICA DE PRIVACIDAD ══ -->
+  <section id="privacidad">
+    <div class="wrapper">
+      <p class="privacy-title">Política de privacidad</p>
+      <ul class="privacy-list">
+        <li><strong>Datos recopilados:</strong> Nombre, número de teléfono, modelo de interés y preferencias de compra compartidos voluntariamente durante la conversación en WhatsApp.</li>
+        <li><strong>Uso de los datos:</strong> La información se utiliza exclusivamente para calificar al prospecto y facilitar el seguimiento por parte del equipo de ventas de la agencia.</li>
+        <li><strong>No compartición:</strong> Los datos personales no se comparten con terceros ajenos a la agencia ni se utilizan para fines publicitarios o comerciales distintos al proceso de venta automotriz.</li>
+        <li><strong>Eliminación:</strong> El titular de los datos puede solicitar la eliminación de su información en cualquier momento escribiendo a nramos@bmw-santafe.com.mx. Los datos se eliminarán en un plazo no mayor a 5 días hábiles.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="wrapper">
+      <p class="footer-text">© 2026 Acelerador de Ventas &nbsp;·&nbsp; nramos@bmw-santafe.com.mx</p>
+    </div>
+  </footer>
+
+</body>
+</html>
